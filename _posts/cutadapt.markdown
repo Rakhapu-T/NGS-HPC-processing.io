@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "Software Installation (HPC)"
+date:   2025-12-10 12:53:04 +0200
+categories: NGS proc
+---
+
+This page explains the process of Trimming NGS Reads on the HPC.
+
+# Prerequisites:
+- Before you begin, make sure you have followed the [[Software Installation (HPC)]] guide.
+- Make sure you have [[Uploading Files to the HPC|uploaded]] the files to the HPC.
+- [`cd`](https://www.geeksforgeeks.org/linux-unix/cd-command-in-linux-with-examples/) to the directory containing the fastQC read files.
+## Step1: Download the slurm script
+```
+
+```
+
+## Step2: Setup email + Append your cutadapt command:
+
+#### Open the Slurm script for editing:
+```
+nano trimmer.sh
+```
+
+#### Using the keyboard arrows, scroll to the bottom of the and find the following:
+```
+# >>>>>>>>>> Enter your email address here to get job status emails <<<<<<<<<<<<
+# ==============================================================================
+#SBATCH --mail-user="example.uct.ac.za"
+# ==============================================================================
+```
+- Change `example.uct.ac.za` to your email.
+#### Scroll to the bottom of the file and paste your cutadapt command.
+Example:
+```
+##################################################################
+
+cutadapt -j 8 \
+		 -a TCCCAGATTATATCTAT \
+         -o Trim3endA11_3.fastq \
+         MAS651A11_S11_L003_R1_001.fastq
+```
+- **Assume that the number of cores (CPUs) is 8.**
+- **See:** [[Cutadapt cheetsheet]] for how to format your commands.
+#### Save the changes and close the file
+1. press: `ctrl + s` (This saves the file)
+2. press: `ctrl + x` (This closes the file)
+
+## Step3: Run Script
+#### Activate the environment:
+```
+source activate cutadapt
+```
+
+#### Run the script:
+```
+sbatch trimmer.sh
+```
+
+## Step5: Verify Results
+```
+# Check if trimmed files are available
+ls -lh
+```
+
+#### Deactivate the Environment when finished
+```
+conda deactivate
+```
+

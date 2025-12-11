@@ -4,4 +4,5 @@ _site
 .jekyll-metadata
 vendor
 
+_posts/2025-12-10-welcome-to-jekyll.markdown
 Gemfile.lock

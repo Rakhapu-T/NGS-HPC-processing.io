@@ -1,0 +1,72 @@
+---
+layout: post
+title:  "ngs_QC"
+date:   2025-12-10 12:53:04 +0200
+categories: NGS proc
+---
+
+This page explains the process of Quality Checking of NGS Reads on the HPC.
+
+# Prerequisites:
+- Before you begin, make sure you have followed the [[Software Installation (HPC)]] guide.
+- Make sure you have [[Uploading Files to the HPC|uploaded]] the files to the HPC.
+- [`cd`](https://www.geeksforgeeks.org/linux-unix/cd-command-in-linux-with-examples/) to the directory containing the fastQC read files.
+
+
+## Step1: Download the slurm script
+```
+
+```
+
+## Step2: Activate environment + Setup email
+#### Open the Slurm script for editing:
+```
+nano qc_script.sh
+```
+
+#### Using the keyboard arrows, scroll to the bottom of the and find the following:
+```
+# >>>>>>>>>> Enter your email address here to get job status emails <<<<<<<<<<<<
+# ==============================================================================
+#SBATCH --mail-user="example.uct.ac.za"
+# ==============================================================================
+```
+- Change `example.uct.ac.za` to your email.
+
+#### Save the changes and close the file
+1. press: `ctrl + s` (This saves the file)
+2. press: `ctrl + x` (This closes the file)
+
+#### Activate the environment:
+```
+source activate ngs_QC
+```
+
+## Step3: Run Script
+```
+sbatch qc_script.sh
+```
+
+## Step4: Download Results
+##### A. Run the following to print the working directory
+```
+pwd
+```
+- Copy the output. Lets call this `output_dir`
+
+##### B. Download the MultQC and FastQC reports:
+Navigate to the directory where you want to store the files on your local computer and run the following command (from the terminal):
+```
+scp -r username@hpc.uct.ac.za:output_dir .
+```
+- replace username with the username used to Log into the HCP (e.g. abcdef123).
+- `output_dir` is the is the directory obtained in [[#A. Run the following to print the working directory|Step4, A.]]
+- **Note:** You could also use GUI tools like [WinSCP](https://winscp.net/eng/download.php) to download the files. Choose an alternative method of choice if the above fails.
+- Don't forget the "`.`" at the end of the line.
+
+#### C. Deactivating the environment
+```
+conda deactivate ngs_QC
+```
+
+

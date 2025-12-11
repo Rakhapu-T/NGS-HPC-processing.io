@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "mageck"
+date:   2025-12-10 12:53:04 +0200
+categories: NGS proc
+---
+
+## Step1: Download the slurm script
+```
+```
+
+
+## Step2: Configure script
+#### Open the Slurm script for editing:
+```
+nano run_mageck.sh
+```
+
+#### Using the keyboard arrows, scroll down and find the following:
+```
+# >>>>>>>>>> Enter your email address here to get job status emails <<<<<<<<<<<<
+# ==============================================================================
+#SBATCH --mail-user="example.uct.ac.za"
+# ==============================================================================
+```
+- Change `example.uct.ac.za` to your email.
+
+#### Scroll down and Input the list of input fastq files:
+Example:
+```
+# Fastq files (ordered)
+FASTQ_FILES=(
+  01_UT_P.fastq
+  02_UT_A.fastq
+  03_UT_B.fastq.gz
+  04_UT_C.fastq.gz
+)
+```
+- **Note:** Both fastq and fastq.gz files are supported
+
+#### Input list of sample labels:
+```
+# Sample Labels (same order as FASTQ_FILES)
+SAMPLE_LABELS=(
+  UT_P
+  UT_A
+  UT_B
+  UT_C
+)
+```
+
+#### Input Path to library:
+example:
+```
+# Path to sgRNA library in CSV format (Relative Path)
+LIBR="../sgRNA_library.csv
+```
+
+#### Input Output prefix for count files:
+example:
+```
+# Output prefix for count files (Relative Path)
+OUTPUT_PREFIX="../msm_crispr_counts"
+```
+
+#### Mageck mle design matrix:
+example:
+```
+# Mageck mle design matrix (Relative Path)
+DESIGN_MATRIX="../design_matrix.txt"
+```
+
+#### Input Mageck mle Output prefix:
+example:
+```
+# Mageck mle ouput prefix
+MLE_OUTPUT_PREFIX="msm_crispr_mle_results"
+```
+
+#### Save the changes and close the file
+1. press: `ctrl + s` (This saves the file)
+2. press: `ctrl + x` (This closes the file)
+
+#### Activate the environment:
+```
+source activate mageck
+```
+
+## Step3: Run The script
+```
+sbatch run_mageck.sh
+```
+
+## Step4: Download Results
+```
+```
+
+**Note:** For Further analysis see [[Vispr]].
