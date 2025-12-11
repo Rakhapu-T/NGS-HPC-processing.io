@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Software Installation (HPC)"
+title:  "Cutadapt"
 date:   2025-12-10 12:53:04 +0200
 categories: NGS proc
 ---
@@ -11,9 +11,11 @@ This page explains the process of Trimming NGS Reads on the HPC.
 - Before you begin, make sure you have followed the [[Software Installation (HPC)]] guide.
 - Make sure you have [[Uploading Files to the HPC|uploaded]] the files to the HPC.
 - [`cd`](https://www.geeksforgeeks.org/linux-unix/cd-command-in-linux-with-examples/) to the directory containing the fastQC read files.
+
 ## Step1: Download the slurm script
 ```
-
+# Download the download script
+wget -O trimmer.sh "https://raw.githubusercontent.com/Rakhapu-T/NGS-HPC-processing.io/refs/heads/main/scripts/trimmer.sh"
 ```
 
 ## Step2: Setup email + Append your cutadapt command:

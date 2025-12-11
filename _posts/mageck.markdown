@@ -7,6 +7,8 @@ categories: NGS proc
 
 ## Step1: Download the slurm script
 ```
+# Download the download script
+wget -O run_mageck.sh "https://raw.githubusercontent.com/Rakhapu-T/NGS-HPC-processing.io/refs/heads/main/scripts/run_mageck.sh"
 ```
 
 

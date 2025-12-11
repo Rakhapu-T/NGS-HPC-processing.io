@@ -15,7 +15,8 @@ This page explains the process of Quality Checking of NGS Reads on the HPC.
 
 ## Step1: Download the slurm script
 ```
-
+# Download the download script
+wget -O qc_script.sh "https://raw.githubusercontent.com/Rakhapu-T/NGS-HPC-processing.io/refs/heads/main/scripts/qc_script.sh"
 ```
 
 ## Step2: Activate environment + Setup email
