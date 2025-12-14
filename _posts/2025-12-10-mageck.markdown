@@ -97,4 +97,4 @@ sbatch run_mageck.sh
 ```
 ```
 
-**Note:** For Further analysis see [[Vispr]].
+**Note:** For Further analysis see Vispr.

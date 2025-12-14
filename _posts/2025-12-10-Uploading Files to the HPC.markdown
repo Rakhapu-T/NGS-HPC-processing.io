@@ -6,10 +6,10 @@ categories: NGS proc
 ---
 
 There are many different ways to upload files to the UCT HPC. Four methods are discussed below:
-1. [[#1. Transfer from device (your pc) to HPC|Transfer from device (your pc) to HPC]]
-2. [[#2. Transfer from personal OneDrive/Dropbox to HPC|Transfer from personal OneDrive/Dropbox to HPC]]
-3. [[#3. Transfer using download link|Interactive transfer using download link (e.g. shared Dropbox link)]]
-4. [[#4. Transfer using Download link [Non-Interactive]|Non-Interactive Transfer using download link]] -> Recommended for very Large files (> 50gB)
+1. [Transfer from device (your pc) to HPC](#1-transfer-from-device-your-pc-to-hpc)
+2. [Transfer from personal OneDrive/Dropbox to HPC](#2-transfer-from-personal-onedrivedropbox-to-hpc)
+3. [Interactive transfer using download link (e.g. shared Dropbox link)](#3-transfer-using-download-link)
+4. [Non-Interactive Transfer using download link](#4-transfer-using-download-link-non-interactive) -> Recommended for very Large files (> 50gB)
 
 ## 1. Transfer from device (your pc) to HPC
 
@@ -80,7 +80,8 @@ TBD - rClone
   sintx
   ```
   
-  Your terminal should then look like this with the highlighted "srvrochpcXXX":![[Pasted image 20251209112954.png]]
+  Your terminal should then look like this with the highlighted "srvrochpcXXX":
+  ![Interactive Job Terminal]({{ site.baseurl }}/assets/images/Pasted image 20251209112954.png)
 
 - Go to the directory where you want to download the file:
   ```
@@ -88,17 +89,17 @@ TBD - rClone
   ```
 
 Replace `destination_path` with an actual path. See example below:
-![[Pasted image 20251209113217.png]]
+![Directory Navigation Example]({{ site.baseurl }}/assets/images/Pasted image 20251209113217.png)
 
 - Go to the dropbox link containing the file you want to download and copy the download link. This is illustrated in the screenshot below:
   
   **For entire folder:** click the share button
-![[Pasted image 20251209113519.png]]
+![Dropbox Share Button]({{ site.baseurl }}/assets/images/Pasted image 20251209113519.png)
 
 
 ---
 **Note:** If the interface with the share button is not available you can just copy the URL as follows:
-![[Pasted image 20251209114259.png]]
+![Copy Dropbox URL]({{ site.baseurl }}/assets/images/Pasted image 20251209114259.png)
 
 The copied URL should then look something like this:
 ```
@@ -133,7 +134,7 @@ wget -O myfile https://www.dropbox.com/scl/fo/afx5hadlri6zkzu77xpnb/AAuzQ1l5ko7S
 ```
 
 Running the above command should give an output of the form:
-![[Pasted image 20251209150240.png]]
+![Wget Download Output]({{ site.baseurl }}/assets/images/Pasted image 20251209150240.png)
 
 To check if download is complete run the following command
 ```
@@ -141,11 +142,11 @@ tail wget-log
 ```
 
 This should give an output as follows:
-![[Pasted image 20251209150515.png]]
-the line `2025-12-09 15:00:36 (18.7 MB/s) - ‘myfile’ saved [592714337/592714337]` indicated that the download is complete.
+![Wget Log Output]({{ site.baseurl }}/assets/images/Pasted image 20251209150515.png)
+the line `2025-12-09 15:00:36 (18.7 MB/s) - 'myfile' saved [592714337/592714337]` indicated that the download is complete.
 
 To verify this run `ls -lh` and check for the file:
-![[Pasted image 20251209150646.png]]
+![File List Output]({{ site.baseurl }}/assets/images/Pasted image 20251209150646.png)
 
 You should see your file on the list of files. Check the size of the file to ensure that you downloaded the correct file. In the screenshot above, the size of myfile is 566M -> 566MB.
 
@@ -157,7 +158,7 @@ file file_name
 - replace file_name with the actual name of your downloaded file.
 
 	if it is a zip file
-	![[Pasted image 20251209151143.png]]
+	![Zip File Check]({{ site.baseurl }}/assets/images/Pasted image 20251209151143.png)
 	- In the screenshot above myfile is the file_name
 	- the output `file_name: Zip archive data, at least v2.0 to extract` indicates that the file is indeed a zip file.
 	- To extract the zip file, run the following command:
@@ -166,7 +167,7 @@ file file_name
 	  ```
 
 	if it is not a zip file
-	![[Pasted image 20251209151550.png]]
+	![Non-Zip File Check]({{ site.baseurl }}/assets/images/Pasted image 20251209151550.png)
 	- In the example above the file is an ASCII text file (not a zip file).
 	- In this case no further processing is needed.
 
@@ -177,7 +178,8 @@ file file_name
   sintx
   ```
   
-  Your terminal should then look like this with the highlighted "srvrochpcXXX":![[Pasted image 20251209112954.png]]
+  Your terminal should then look like this with the highlighted "srvrochpcXXX":
+  ![Interactive Job Terminal]({{ site.baseurl }}/assets/images/Pasted image 20251209112954.png)
 
 - Go to the directory where you want to download the file:
   ```
@@ -185,34 +187,34 @@ file file_name
   ```
 
 Replace `destination_path` with an actual path. See example below:
-![[Pasted image 20251209113217.png]]
+![Directory Navigation Example]({{ site.baseurl }}/assets/images/Pasted image 20251209113217.png)
 
 #### Obtaining the OneDrive Download link:
 ##### A. Navigate to the file you want to download in the browser
-![[Pasted image 20251209154004.png]]
+![OneDrive File Navigation]({{ site.baseurl }}/assets/images/Pasted image 20251209154004.png)
 #### B. Open Dev Tools (Press F12 or `Ctrl+Shift+I` / `Cmd+Option+I`)
-![[Pasted image 20251209154449.png]]
+![Open Developer Tools]({{ site.baseurl }}/assets/images/Pasted image 20251209154449.png)
 
 
 ##### C. Go to the network tab
-![[Pasted image 20251209154643.png]]
+![Network Tab]({{ site.baseurl }}/assets/images/Pasted image 20251209154643.png)
 
 #### D. Clear and Start Record
 Ensure the **record** button (a small circle/dot) is red and the log is clear (use the clear button, typically a circle with a slash). 
-![[Pasted image 20251209155223.png]]
+![Clear and Record]({{ site.baseurl }}/assets/images/Pasted image 20251209155223.png)
 - Click the button highlighted with the arrow.
 
 #### E. Click the download button
 In the main browser window, click the **"Download"** button. (For folders, it will first aggregate the files and then download the zip).
-![[Pasted image 20251209155505.png]]
+![Click Download Button]({{ site.baseurl }}/assets/images/Pasted image 20251209155505.png)
 - Make sure to immediately cancel the download once it begins. unless you actually want to download the file onto your personal device.
 #### F. Find the Request
 Watch the Network log. Look for a request URL that starts with: `zip?`:
-![[Pasted image 20251209155937.png]]
+![Find Zip Request]({{ site.baseurl }}/assets/images/Pasted image 20251209155937.png)
 
 #### G. Copy as cURL (bash)
 right click on the request url and copy as cURL (bash):
-![[Pasted image 20251209160133.png]]
+![Copy as cURL]({{ site.baseurl }}/assets/images/Pasted image 20251209160133.png)
 
 #### H. Save the Output
  Go to the terminal into your `destination_path`, and paste the command you just copied from the browser. Example:
@@ -242,10 +244,10 @@ right click on the request url and copy as cURL (bash):
  ```
 
 The output should be as follows:
-![[Pasted image 20251209161410.png]]
+![cURL Download Output]({{ site.baseurl }}/assets/images/Pasted image 20251209161410.png)
 
 Once the download is complete run `ls -lh` and check for the file:
-![[Pasted image 20251209161632.png]]
+![File List Output]({{ site.baseurl }}/assets/images/Pasted image 20251209161632.png)
 
 You should see your file on the list of files. Check the size of the file to ensure that you downloaded the correct file. In the screenshot above, the size of myfile is 566M -> 566MB.
 
@@ -257,7 +259,7 @@ file file_name
 - replace file_name with the actual name of your downloaded file.
 
 	if it is a zip file
-	![[Pasted image 20251209151143.png]]
+	![Zip File Check]({{ site.baseurl }}/assets/images/Pasted image 20251209151143.png)
 	- In the screenshot above myfile is the file_name
 	- the output `file_name: Zip archive data, at least v2.0 to extract` indicates that the file is indeed a zip file.
 	- To extract the zip file, run the following command:
@@ -266,7 +268,7 @@ file file_name
 	  ```
 
 	if it is not a zip file
-	![[Pasted image 20251209151550.png]]
+	![Non-Zip File Check]({{ site.baseurl }}/assets/images/Pasted image 20251209151550.png)
 	- In the example above the file is an ASCII text file (not a zip file).
 	- In this case no further processing is needed.
 
@@ -320,7 +322,7 @@ LINK="https://example.com/download_link"
 # ==============================================================================
 ```
 - Replace https://example.com/download_link with your download link
-- Follow the instruction in [[Download Link]] in order to retrieve the file's download link.
+- Follow the instruction in [Download Link]({{ site.baseurl }}{% post_url 2025-12-10-Download_Link %}) in order to retrieve the file's download link.
 
 ##### Enter the file name (Optional):
 ```
@@ -345,4 +347,4 @@ sbatch downloader.sh
 
 ### Step4: Verify the download
 You should receive email notifications, updating you on the progress of the script. Once the script is done, the download by running `ls -lh`:
-![[Pasted image 20251209150646.png]]
+![File List Output]({{ site.baseurl }}/assets/images/Pasted image 20251209150646.png)

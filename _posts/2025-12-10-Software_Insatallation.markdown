@@ -20,7 +20,7 @@ ssh username@hpc.uct.ac.za
 Type `yes` and press Enter to accept the server's public key (fingerprint) and continue. This information will be saved, and you won't be prompted again unless the key changes.
 
 The login process should look something like this:
-![[Pasted image 20251208141047.png]]
+![HPC Login Screenshot]({{ site.baseurl }}/assets/images/Pasted image 20251208141047.png)
 
 ---
 ## ⚠️ Installation Note:
@@ -45,7 +45,7 @@ sintx --ntasks=4
 ```
 
 Running the command above should change the background of the hostname to white. This indicates that you are in a **worker node** which is illustrated below:
-![[Pasted image 20251208141500.png]]
+![Worker Node Screenshot]({{ site.baseurl }}/assets/images/Pasted image 20251208141500.png)
 
 ---
 
@@ -62,7 +62,7 @@ conda --version
 ```
 
 If the above runs successfully, you should get an output similar to the one below:
-![[Pasted image 20251208152925.png]]
+![Conda Version Output]({{ site.baseurl }}/assets/images/Pasted image 20251208152925.png)
 
 **Note**: You could use py3.12, this just changes the base python version, which doesn't really matter since we will specify the python version for every environment we create.
 
@@ -89,7 +89,7 @@ mageck --version
 ```
 
 If the install was successful, the version of mageck should be displayed. This is illustrated below:
-![[Pasted image 20251208160201.png]]
+![MAGeCK Version Output]({{ site.baseurl }}/assets/images/Pasted image 20251208160201.png)
 
 ---
 
@@ -131,7 +131,7 @@ multiqc --version
 ```
 
 If installation is successful the fastqc and multiqc versions should be output to the terminal as follows:
-![[Pasted image 20251208230044.png]] 
+![FastQC and MultiQC Versions]({{ site.baseurl }}/assets/images/Pasted image 20251208230044.png)
 
 ---
 ## 6. Installing Cutadapt
@@ -160,13 +160,13 @@ cutadapt --version
 ```
 
 If the installation is successful, the output should be as follows:
-![[Pasted image 20251208231918.png]]
+![Cutadapt Version Output]({{ site.baseurl }}/assets/images/Pasted image 20251208231918.png)
 
 ---
 
 ## Summary:
 
 Three environments were created:
-1. [[mageck]]: Used exclusively for **MAGeCK** analysis
-2. [[ngs_QC]]: Used for quality checking using fastQC and multiQC
-3. [[cutadapt]]: Used for trimming low-quality bases and removing adapter sequences.
+1. [mageck]({{ site.baseurl }}{% post_url 2025-12-10-mageck %}): Used exclusively for **MAGeCK** analysis
+2. [ngs_QC]({{ site.baseurl }}{% post_url 2025-12-10-ngs_QC %}): Used for quality checking using fastQC and multiQC
+3. [cutadapt]({{ site.baseurl }}{% post_url 2025-12-10-Cutadapt %}): Used for trimming low-quality bases and removing adapter sequences.

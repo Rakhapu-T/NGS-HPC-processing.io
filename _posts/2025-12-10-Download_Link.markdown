@@ -7,8 +7,8 @@ categories: NGS proc
 
 
 This file Documents 2 methods for acquiring the download link:
-1. [[#1. Dropbox|Dropbox]] download link
-2. [[#2. OneDrive|OneDrive]] download link
+1. [Dropbox](#1-dropbox) download link
+2. [OneDrive](#2-onedrive) download link
 
 
 ## 1. Dropbox
@@ -16,14 +16,14 @@ This file Documents 2 methods for acquiring the download link:
  Go to the dropbox link containing the file you want to download and copy the download link. This is illustrated in the screenshots below:
 
  **For entire folder or single file:** click the share button
-![[Pasted image 20251209113519.png]]
+![Dropbox Share Button]({{ site.baseurl }}/assets/images/Pasted image 20251209113519.png)
 
-If the Share button is available, skip to [[#Converting to Download-Link]]
+If the Share button is available, skip to [Converting to Download-Link](#converting-to-download-link)
 
 
 ---
 **Note:** If the interface with the share button is not available you can just copy the URL as follows:
-![[Pasted image 20251209114259.png]]
+![Copy Dropbox URL]({{ site.baseurl }}/assets/images/Pasted image 20251209114259.png)
 
 The copied URL should then look something like this:
 ```
@@ -55,30 +55,31 @@ https://www.dropbox.com/scl/fo/afx5hadlri6zkzu77xpnb/AAuzQ1l5ko7SnZRsI-0JmaY?rlk
 ## 2. OneDrive
 
 #### A. Navigate to the file you want to download in the browser
-![[Pasted image 20251209154004.png]]
+![OneDrive File Navigation]({{ site.baseurl }}/assets/images/Pasted image 20251209154004.png)
 #### B. Open Dev Tools (Press F12 or `Ctrl+Shift+I` / `Cmd+Option+I`)
-![[Pasted image 20251209154449.png]]
+![Open Developer Tools]({{ site.baseurl }}/assets/images/Pasted image 20251209154449.png)
 
 
 ##### C. Go to the network tab
-![[Pasted image 20251209154643.png]]
+![Network Tab]({{ site.baseurl }}/assets/images/Pasted image 20251209154643.png)
 
 #### D. Clear and Start Record
 Ensure the **record** button (a small circle/dot) is red and the log is clear (use the clear button, typically a circle with a slash). 
-![[Pasted image 20251209155223.png]]
+![Clear and Record]({{ site.baseurl }}/assets/images/Pasted image 20251209155223.png)
 - Click the button highlighted with the arrow.
 
 #### E. Click the download button
 In the main browser window, click the **"Download"** button. (For folders, it will first aggregate the files and then download the zip).
-![[Pasted image 20251209155505.png]]
+![Click Download Button]({{ site.baseurl }}/assets/images/Pasted image 20251209155505.png)
 - Make sure to immediately cancel the download once it begins. unless you actually want to download the file onto your personal device.
+
 #### F. Find the Request
-Watch the Network log. Look for a request URL that starts with: `zip?`:
-![[Pasted image 20251209155937.png]]
+Watch the Network log. Look for a request URL that starts with: "`zip?`":
+![Find Zip Request]({{ site.baseurl }}/assets/images/Pasted image 20251209155937.png)
 
 #### G. Copy as cURL (bash)
 right click on the request url and copy as cURL (bash):
-![[Pasted image 20251209160133.png]]
+![Copy as cURL]({{ site.baseurl }}/assets/images/Pasted image 20251209160133.png)
 
 #### H. Save the Output
  Go to the terminal into your `destination_path`, and paste the command you just copied from the browser. Example:
