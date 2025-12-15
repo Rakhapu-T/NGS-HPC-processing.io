@@ -1,6 +1,6 @@
 #!/bin/sh
 
-############################### Generic Bash Script ######################################
+############################### QC_script ######################################
 
 # The line below indicates which accounting group to log your job against
 #SBATCH --account=pathology
