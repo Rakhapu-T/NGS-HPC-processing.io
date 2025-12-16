@@ -5,8 +5,8 @@ permalink: /about/Contact/
 ---
 
 ## Email contact
-Contact me via emial at rakhaput1@mail.com
+Contact me via email at [rakhaput1@mail.com](mailto:rakhaput1@mail.com)
 
 ## Github
-my github username is Rakhapu-T
+The repository for this site can be found [here](https://github.com/Rakhapu-T/NGS-HPC-processing.io)
 

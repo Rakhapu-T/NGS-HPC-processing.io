@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Count Spacers MTBP3"
-date:   2025-12-10 12:53:04 +0200
+date:   2025-12-14 12:53:04 +0200
 categories: NGS proc
 ---
 
@@ -37,6 +37,15 @@ The following modules are part of Python's standard library (no installation nee
 
 ## Installation
 
+### 0. Download Script:
+If you do not already have the script, download it using the following command:
+
+```bash
+# Download the python script
+wget -O count_spacers_mtbP3_nokey_nomatch.py \
+  "https://raw.githubusercontent.com/Rakhapu-T/NGS-HPC-processing.io/refs/heads/main/scripts/count_spacers_mtbP3_nokey_nomatch.py"
+```
+
 ### 1. Create Conda Environment (Recommended)
 
 ```bash
@@ -63,7 +72,7 @@ python -c "import Bio; import numpy; print('All dependencies installed successfu
 #### Process All FASTQ Files in Current Directory
 
 ```bash
-python count_spacers_mtbP3_nokey_nomatch.py --input RLC0001_RC_all.csv
+python count_spacers_mtbP3_nokey_nomatch.py --input reference_library.csv
 ```
 
 This will:
